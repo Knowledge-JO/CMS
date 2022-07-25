@@ -1,0 +1,14 @@
+<title>login</title>
+{% for message in messages%}
+    <p>{{message}}</p>
+{%endfor%}
+<form method="POST" action="">
+    {% csrf_token %}
+    <p><input type="text" name="username" placeholder="username"></p>
+    <p><input type="text" name = "password" placeholder="password"></p>
+
+    <input type="submit" value="login">
+</form>
+
+<p>Don't have an account?</p>
+<a href="{% url 'register'%}">Sign Up</a>
